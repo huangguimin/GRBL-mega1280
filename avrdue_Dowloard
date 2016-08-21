@@ -1,0 +1,7 @@
+#!/bin/bash
+avrdude -p m1280 -P /dev/tty.usbserial-AI0443VA -c arduino -b 57600 -F -u -U flash:w:mcx314.hex
+
+if [ $? != 0 ];then
+    echo "Donwloard Error!!!"
+    exit;
+fi

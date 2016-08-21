@@ -1,0 +1,437 @@
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_PROGRAM_VERSION	5.8	//
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+ReadIDT	MCX314/X5MCX312/IDT.c	/^unsigned char ReadIDT(unsigned char * p)$/;"	f
+ReadRAM	MCX314/X5MCX312/IDT.c	/^unsigned char ReadRAM(unsigned int adres)$/;"	f
+WriteIDT	MCX314/X5MCX312/IDT.c	/^void WriteIDT(unsigned char * p,unsigned char ucData)$/;"	f
+WriteRAM	MCX314/X5MCX312/IDT.c	/^void WriteRAM(unsigned int adres,unsigned char idat)$/;"	f
+IDTadr	MCX314/X5MCX312/IDT.h	1;"	d
+COOL_0N	MCX314/X5MCX312/Jg.c	/^void COOL_0N(void)$/;"	f
+FHua	MCX314/X5MCX312/Jg.c	/^void FHua(void)$/;"	f
+FuoHua	MCX314/X5MCX312/Jg.c	/^void FuoHua(void)$/;"	f
+JinGei	MCX314/X5MCX312/Jg.c	/^void JinGei(void)$/;"	f
+TangKong	MCX314/X5MCX312/Jg.c	/^void TangKong(void)$/;"	f
+XiKong	MCX314/X5MCX312/Jg.c	/^void XiKong(void)$/;"	f
+ArcChaBu	MCX314/X5MCX312/Mcx312.c	/^void ArcChaBu(void)$/;"	f
+CircleChaBu	MCX314/X5MCX312/Mcx312.c	/^void CircleChaBu(void)$/;"	f
+InitMcx312	MCX314/X5MCX312/Mcx312.c	/^void InitMcx312(void)$/;"	f
+L	MCX314/X5MCX312/Mcx312.c	/^unsigned int R,L;$/;"	v
+LX	MCX314/X5MCX312/Mcx312.c	/^unsigned int LX[2],LY[2];$/;"	v
+LY	MCX314/X5MCX312/Mcx312.c	/^unsigned int LX[2],LY[2];$/;"	v
+R	MCX314/X5MCX312/Mcx312.c	/^unsigned int R,L;$/;"	v
+ReadEP	MCX314/X5MCX312/Mcx312.c	/^void ReadEP(unsigned char axis)             $/;"	f
+ReadLP	MCX314/X5MCX312/Mcx312.c	/^void ReadLP(unsigned char axis)             $/;"	f
+SetEP	MCX314/X5MCX312/Mcx312.c	/^void SetEP(unsigned axis,unsigned int dwdata1,unsigned int dwdata2)   \/* ����ʵ��λ�ü����� *\/$/;"	f
+SetLP	MCX314/X5MCX312/Mcx312.c	/^void SetLP(unsigned axis,unsigned int dwdata1,unsigned int dwdata2)   \/* �����߼�λ�ü����� *\/$/;"	f
+Set_Circle	MCX314/X5MCX312/Mcx312.c	/^void Set_Circle(void)$/;"	f
+Set_HigSpeed	MCX314/X5MCX312/Mcx312.c	/^void Set_HigSpeed(void)$/;"	f
+Set_LowSpeed	MCX314/X5MCX312/Mcx312.c	/^void Set_LowSpeed(void)$/;"	f
+Wait	MCX314/X5MCX312/Mcx312.c	/^void Wait(unsigned char axis)$/;"	f
+Wait_Next	MCX314/X5MCX312/Mcx312.c	/^void Wait_Next(void)$/;"	f
+Write_WR0	MCX314/X5MCX312/Mcx312.c	/^void Write_WR0(unsigned char axis,unsigned char cmd)$/;"	f
+Write_WR1	MCX314/X5MCX312/Mcx312.c	/^void Write_WR1(unsigned char axis,long wdata)$/;"	f
+Write_WR2	MCX314/X5MCX312/Mcx312.c	/^void Write_WR2(unsigned char axis,long wdata)$/;"	f
+Write_WR3	MCX314/X5MCX312/Mcx312.c	/^void Write_WR3(unsigned char axis,long wdata)$/;"	f
+Write_WR4	MCX314/X5MCX312/Mcx312.c	/^void Write_WR4(long wdata)$/;"	f
+Write_WR5	MCX314/X5MCX312/Mcx312.c	/^void Write_WR5(long wdata)$/;"	f
+Write_data	MCX314/X5MCX312/Mcx312.c	/^void Write_data(long wdata1,long wdata2)$/;"	f
+XCCW	MCX314/X5MCX312/Mcx312.c	/^void XCCW(unsigned int n)$/;"	f
+XCW	MCX314/X5MCX312/Mcx312.c	/^void XCW(unsigned int n)$/;"	f
+XFenZhong	MCX314/X5MCX312/Mcx312.c	/^void XFenZhong(void)$/;"	f
+YCCW	MCX314/X5MCX312/Mcx312.c	/^void YCCW(unsigned int n)$/;"	f
+YCW	MCX314/X5MCX312/Mcx312.c	/^void YCW(unsigned int n)$/;"	f
+YFenZhong	MCX314/X5MCX312/Mcx312.c	/^void YFenZhong(void)$/;"	f
+ch	MCX314/X5MCX312/Mcx312.c	/^unsigned char ch;$/;"	v
+delay	MCX314/X5MCX312/Mcx312.c	/^void delay(unsigned int n)$/;"	f
+inputw	MCX314/X5MCX312/Mcx312.c	/^unsigned char inputw(unsigned char * p)$/;"	f
+outpw	MCX314/X5MCX312/Mcx312.c	/^void outpw(unsigned char * p,unsigned char ucData)$/;"	f
+vsin	MCX314/X5MCX312/Mcx312.c	/^__flash float vsin[] = {0,$/;"	v
+PWMInitial	MCX314/X5MCX312/PWM.c	/^void PWMInitial(void)$/;"	f
+PWM_OFF	MCX314/X5MCX312/PWM.c	/^void PWM_OFF(void)$/;"	f
+PWM_ON	MCX314/X5MCX312/PWM.c	/^void PWM_ON(void)$/;"	f
+ADR	MCX314/X5MCX312/Uart.c	/^unsigned char ADR,CMD;$/;"	v
+CMD	MCX314/X5MCX312/Uart.c	/^unsigned char ADR,CMD;$/;"	v
+CRC16	MCX314/X5MCX312/Uart.c	/^unsigned short CRC16(unsigned char *puchMsg,unsigned short usDataLen)$/;"	f
+HeadAdr	MCX314/X5MCX312/Uart.c	/^unsigned int HeadAdr,LEN;$/;"	v
+JG	MCX314/X5MCX312/Uart.c	/^unsigned char JG[16];$/;"	v
+LEN	MCX314/X5MCX312/Uart.c	/^unsigned int HeadAdr,LEN;$/;"	v
+PutByte	MCX314/X5MCX312/Uart.c	/^void PutByte(unsigned char s)$/;"	f
+PutBytes	MCX314/X5MCX312/Uart.c	/^void PutBytes(const unsigned char *pt,unsigned char size)$/;"	f
+RecvBuf	MCX314/X5MCX312/Uart.c	/^unsigned char RecvBuf[24];  \/\/�������ݻ�����$/;"	v
+RxdPos	MCX314/X5MCX312/Uart.c	/^unsigned char RxdPos=0;     \/\/���ն�λ������$/;"	v
+SendACK	MCX314/X5MCX312/Uart.c	/^void SendACK(void)          \/\/�ӻ���Ӧд����$/;"	f
+SendBuf	MCX314/X5MCX312/Uart.c	/^unsigned char SendBuf[15]; \/\/��������緳���$/;"	v
+SendtoPC	MCX314/X5MCX312/Uart.c	/^void SendtoPC(void)                 \/\/�ӻ���Ӧ������$/;"	f
+Uart0_Receive	MCX314/X5MCX312/Uart.c	/^  __interrupt void Uart0_Receive(void)$/;"	f
+auchCRCHi	MCX314/X5MCX312/Uart.c	/^__flash unsigned char auchCRCHi[] = {$/;"	v
+auchCRCLo	MCX314/X5MCX312/Uart.c	/^__flash unsigned char auchCRCLo[] = {$/;"	v
+AX	MCX314/X5MCX312/X5Main.c	/^unsigned int AX[2],AY[2],AZ[2];$/;"	v
+AY	MCX314/X5MCX312/X5Main.c	/^unsigned int AX[2],AY[2],AZ[2];$/;"	v
+AZ	MCX314/X5MCX312/X5Main.c	/^unsigned int AX[2],AY[2],AZ[2];$/;"	v
+Aram	MCX314/X5MCX312/X5Main.c	/^void Aram(void)$/;"	f
+Bjtime	MCX314/X5MCX312/X5Main.c	/^unsigned char Qgtime,Bjtime,Ztime;$/;"	v
+Byom	MCX314/X5MCX312/X5Main.c	/^unsigned char Byom[3];$/;"	v
+Clock	MCX314/X5MCX312/X5Main.c	/^void Clock(void)$/;"	f
+EEPROM_Read	MCX314/X5MCX312/X5Main.c	/^unsigned char EEPROM_Read(unsigned int uiAddress)$/;"	f
+EEPROM_Write	MCX314/X5MCX312/X5Main.c	/^void EEPROM_Write(unsigned int uiAddress, unsigned char ucData)$/;"	f
+Func	MCX314/X5MCX312/X5Main.c	/^unsigned char Ints,Func,OFFtime;$/;"	v
+Hour	MCX314/X5MCX312/X5Main.c	/^unsigned char Sec,Min,Hour;$/;"	v
+INT0Interrupting	MCX314/X5MCX312/X5Main.c	/^  __interrupt void INT0Interrupting(void)$/;"	f
+INT3Interrupting	MCX314/X5MCX312/X5Main.c	/^  __interrupt void INT3Interrupting(void)$/;"	f
+INTflag	MCX314/X5MCX312/X5Main.c	/^unsigned char INTflag,Status;$/;"	v
+Inits	MCX314/X5MCX312/X5Main.c	/^void Inits(void)$/;"	f
+Ints	MCX314/X5MCX312/X5Main.c	/^unsigned char Ints,Func,OFFtime;$/;"	v
+MTSpeed	MCX314/X5MCX312/X5Main.c	/^unsigned int Speed,MTSpeed;$/;"	v
+Min	MCX314/X5MCX312/X5Main.c	/^unsigned char Sec,Min,Hour;$/;"	v
+OFFtime	MCX314/X5MCX312/X5Main.c	/^unsigned char Ints,Func,OFFtime;$/;"	v
+PCINT0_INT	MCX314/X5MCX312/X5Main.c	/^  __interrupt void PCINT0_INT(void)    $/;"	f
+PCINT1_INT	MCX314/X5MCX312/X5Main.c	/^  __interrupt void PCINT1_INT(void)$/;"	f
+PCINT2_INT	MCX314/X5MCX312/X5Main.c	/^  __interrupt void PCINT2_INT(void)$/;"	f
+PORTInit	MCX314/X5MCX312/X5Main.c	/^void PORTInit(void)$/;"	f
+Qgtime	MCX314/X5MCX312/X5Main.c	/^unsigned char Qgtime,Bjtime,Ztime;$/;"	v
+Sec	MCX314/X5MCX312/X5Main.c	/^unsigned char Sec,Min,Hour;$/;"	v
+SendDataFlag	MCX314/X5MCX312/X5Main.c	/^unsigned char SendDataFlag;$/;"	v
+Speed	MCX314/X5MCX312/X5Main.c	/^unsigned int Speed,MTSpeed;$/;"	v
+Status	MCX314/X5MCX312/X5Main.c	/^unsigned char INTflag,Status;$/;"	v
+VXT	MCX314/X5MCX312/X5Main.c	/^unsigned char VXT;$/;"	v
+X	MCX314/X5MCX312/X5Main.c	/^unsigned int X,Y,Z;$/;"	v
+Y	MCX314/X5MCX312/X5Main.c	/^unsigned int X,Y,Z;$/;"	v
+Z	MCX314/X5MCX312/X5Main.c	/^unsigned int X,Y,Z;$/;"	v
+Ztime	MCX314/X5MCX312/X5Main.c	/^unsigned char Qgtime,Bjtime,Ztime;$/;"	v
+main	MCX314/X5MCX312/X5Main.c	/^int main(void)$/;"	f
+timer0_ovf	MCX314/X5MCX312/X5Main.c	/^  __interrupt void timer0_ovf(void)$/;"	f
+AX1	MCX314/X5MCX312/X5sys.h	2;"	d
+AX2	MCX314/X5MCX312/X5sys.h	5;"	d
+AY1	MCX314/X5MCX312/X5sys.h	3;"	d
+AY2	MCX314/X5MCX312/X5sys.h	6;"	d
+AZ1	MCX314/X5MCX312/X5sys.h	4;"	d
+AZ2	MCX314/X5MCX312/X5sys.h	7;"	d
+Ae	MCX314/X5MCX312/X5sys.h	9;"	d
+BIT	MCX314/X5MCX312/X5sys.h	1;"	d
+BLUE_OFF	MCX314/X5MCX312/X5sys.h	39;"	d
+BLUE_ON	MCX314/X5MCX312/X5sys.h	21;"	d
+CE_OFF	MCX314/X5MCX312/X5sys.h	37;"	d
+CE_ON	MCX314/X5MCX312/X5sys.h	19;"	d
+FAe	MCX314/X5MCX312/X5sys.h	15;"	d
+GREEN_OFF	MCX314/X5MCX312/X5sys.h	40;"	d
+GREEN_ON	MCX314/X5MCX312/X5sys.h	22;"	d
+GSelect_OFF	MCX314/X5MCX312/X5sys.h	49;"	d
+GSelect_ON	MCX314/X5MCX312/X5sys.h	31;"	d
+HP1_OFF	MCX314/X5MCX312/X5sys.h	50;"	d
+HP1_ON	MCX314/X5MCX312/X5sys.h	32;"	d
+HP2_OFF	MCX314/X5MCX312/X5sys.h	51;"	d
+HP2_ON	MCX314/X5MCX312/X5sys.h	33;"	d
+HP_OFF	MCX314/X5MCX312/X5sys.h	46;"	d
+HP_ON	MCX314/X5MCX312/X5sys.h	28;"	d
+Halt	MCX314/X5MCX312/X5sys.h	14;"	d
+OL_OFF	MCX314/X5MCX312/X5sys.h	43;"	d
+OL_ON	MCX314/X5MCX312/X5sys.h	25;"	d
+Qg	MCX314/X5MCX312/X5sys.h	10;"	d
+Qt	MCX314/X5MCX312/X5sys.h	11;"	d
+RED_OFF	MCX314/X5MCX312/X5sys.h	38;"	d
+RED_ON	MCX314/X5MCX312/X5sys.h	20;"	d
+SAV	MCX314/X5MCX312/X5sys.h	8;"	d
+Sg_OFF	MCX314/X5MCX312/X5sys.h	35;"	d
+Sg_ON	MCX314/X5MCX312/X5sys.h	17;"	d
+St_OFF	MCX314/X5MCX312/X5sys.h	36;"	d
+St_ON	MCX314/X5MCX312/X5sys.h	18;"	d
+WT_OFF	MCX314/X5MCX312/X5sys.h	45;"	d
+WT_ON	MCX314/X5MCX312/X5sys.h	27;"	d
+XU_OFF	MCX314/X5MCX312/X5sys.h	44;"	d
+XU_ON	MCX314/X5MCX312/X5sys.h	26;"	d
+Z1_OFF	MCX314/X5MCX312/X5sys.h	41;"	d
+Z1_ON	MCX314/X5MCX312/X5sys.h	23;"	d
+Z2_OFF	MCX314/X5MCX312/X5sys.h	42;"	d
+Z2_ON	MCX314/X5MCX312/X5sys.h	24;"	d
+ZDown_OFF	MCX314/X5MCX312/X5sys.h	48;"	d
+ZDown_ON	MCX314/X5MCX312/X5sys.h	30;"	d
+ZRise_OFF	MCX314/X5MCX312/X5sys.h	47;"	d
+ZRise_ON	MCX314/X5MCX312/X5sys.h	29;"	d
+Zin1	MCX314/X5MCX312/X5sys.h	12;"	d
+Zin2	MCX314/X5MCX312/X5sys.h	13;"	d
+FXFbu	MCX314/X5MCX312/bushang.c	/^void FXFbu(unsigned int n)$/;"	f
+FXZbu	MCX314/X5MCX312/bushang.c	/^void FXZbu(unsigned int n)$/;"	f
+FYFbu	MCX314/X5MCX312/bushang.c	/^void FYFbu(unsigned int n)$/;"	f
+FYZbu	MCX314/X5MCX312/bushang.c	/^void FYZbu(unsigned int n)$/;"	f
+ZXFbu	MCX314/X5MCX312/bushang.c	/^void ZXFbu(unsigned int n)$/;"	f
+ZXZbu	MCX314/X5MCX312/bushang.c	/^void ZXZbu(unsigned int n)$/;"	f
+ZYFbu	MCX314/X5MCX312/bushang.c	/^void ZYFbu(unsigned int n)$/;"	f
+ZYZbu	MCX314/X5MCX312/bushang.c	/^void ZYZbu(unsigned int n)$/;"	f
+A	MCX314/X5MCX312/mcx312.h	/^  unsigned   A[2];$/;"	m	struct:__anon6
+ACCELERATION	MCX314/X5MCX312/mcx312.h	191;"	d
+ACC_RATE	MCX314/X5MCX312/mcx312.h	193;"	d
+ALL_AXES	MCX314/X5MCX312/mcx312.h	5;"	d
+AO	MCX314/X5MCX312/mcx312.h	/^  unsigned   AO[2];$/;"	m	struct:__anon6
+AXIS_X	MCX314/X5MCX312/mcx312.h	3;"	d
+AXIS_Y	MCX314/X5MCX312/mcx312.h	4;"	d
+Accelerated_Rate	MCX314/X5MCX312/mcx312.h	/^  long       Accelerated_Rate; \/\/���ٶȱ仯��$/;"	m	struct:__anon6
+Acceleration	MCX314/X5MCX312/mcx312.h	/^  long       Acceleration;     \/\/���ٶ� $/;"	m	struct:__anon6
+AxesNum	MCX314/X5MCX312/mcx312.h	/^  unsigned   AxesNum;             \/\/Ҫ���в岹�������Ŀ$/;"	m	struct:__anon7
+AxesNum	MCX314/X5MCX312/mcx312.h	/^  unsigned   AxesNum;    \/\/Ҫ���в岹������$/;"	m	struct:__anon4
+BP1MH	MCX314/X5MCX312/mcx312.h	82;"	d
+BP1ML	MCX314/X5MCX312/mcx312.h	81;"	d
+BP1PH	MCX314/X5MCX312/mcx312.h	80;"	d
+BP1PL	MCX314/X5MCX312/mcx312.h	79;"	d
+BP2MH	MCX314/X5MCX312/mcx312.h	86;"	d
+BP2ML	MCX314/X5MCX312/mcx312.h	85;"	d
+BP2PH	MCX314/X5MCX312/mcx312.h	84;"	d
+BP2PL	MCX314/X5MCX312/mcx312.h	83;"	d
+BPData	MCX314/X5MCX312/mcx312.h	/^}BPData;$/;"	t	typeref:struct:__anon4
+BPHEADER	MCX314/X5MCX312/mcx312.h	91;"	d
+C	MCX314/X5MCX312/mcx312.h	/^  long       C[2];        \/\/Բ��$/;"	m	struct:__anon3
+CM	MCX314/X5MCX312/mcx312.h	/^  unsigned   CM[2]; $/;"	m	struct:__anon6
+CP	MCX314/X5MCX312/mcx312.h	/^  unsigned   CP[2];$/;"	m	struct:__anon6
+CW	MCX314/X5MCX312/mcx312.h	/^  int        CW;          \/\/��ת����˳ʱ��Ϊ1����ʱ��Ϊ0$/;"	m	struct:__anon3
+CircleData	MCX314/X5MCX312/mcx312.h	/^}CircleData;$/;"	t	typeref:struct:__anon3
+Cmd	MCX314/X5MCX312/mcx312.h	/^   char   Cmd;             \/\/����$/;"	m	struct:__anon1
+D	MCX314/X5MCX312/mcx312.h	/^  unsigned   D[2];$/;"	m	struct:__anon6
+DECELERATION	MCX314/X5MCX312/mcx312.h	192;"	d
+DP	MCX314/X5MCX312/mcx312.h	/^  long       DP;          \/\/��������$/;"	m	struct:__anon2
+DP	MCX314/X5MCX312/mcx312.h	/^  long       DP;          \/\/��������$/;"	m	struct:__anon3
+DataList	MCX314/X5MCX312/mcx312.h	/^}DataList;$/;"	t	typeref:struct:__anon1
+Deceleration	MCX314/X5MCX312/mcx312.h	/^  long       Deceleration;     \/\/�����ٶ�$/;"	m	struct:__anon6
+ERROR	MCX314/X5MCX312/mcx312.h	/^  int        ERROR;               \/\/�����źţ��������ĵ�ERR_List.txt��$/;"	m	struct:__anon7
+FEEDBACK_RATE	MCX314/X5MCX312/mcx312.h	98;"	d
+GVLIST	MCX314/X5MCX312/mcx312.h	/^}GVLIST;$/;"	t	typeref:struct:__anon7
+H_SEARCHING_L	MCX314/X5MCX312/mcx312.h	92;"	d
+INIT_SPEED	MCX314/X5MCX312/mcx312.h	190;"	d
+Init_Speed	MCX314/X5MCX312/mcx312.h	/^  long       Init_Speed;       \/\/��ʼ�ٶ�$/;"	m	struct:__anon6
+IntMask	MCX314/X5MCX312/mcx312.h	/^  int        IntMask;             \/\/��ʼ�ж���$/;"	m	struct:__anon7
+K	MCX314/X5MCX312/mcx312.h	/^  unsigned   K[2];$/;"	m	struct:__anon6
+LineData	MCX314/X5MCX312/mcx312.h	/^}LineData;$/;"	t	typeref:struct:__anon2
+M	MCX314/X5MCX312/mcx312.h	/^  float      M;$/;"	m	struct:__anon6
+N_CLOSED_LOOP	MCX314/X5MCX312/mcx312.h	95;"	d
+Num	MCX314/X5MCX312/mcx312.h	/^  int        Num;        \/\/������Ŀ$/;"	m	struct:__anon4
+P	MCX314/X5MCX312/mcx312.h	/^  long       P[2];        \/\/2�������ϵ�����$/;"	m	struct:__anon2
+P	MCX314/X5MCX312/mcx312.h	/^  long       P[2];        \/\/2�������ϵ�����$/;"	m	struct:__anon3
+PlaneFlag	MCX314/X5MCX312/mcx312.h	/^  int        PlaneFlag;           \/\/ƽ���ʶ$/;"	m	struct:__anon7
+Position	MCX314/X5MCX312/mcx312.h	/^}Position;$/;"	t	typeref:struct:__anon5
+QHead	MCX314/X5MCX312/mcx312.h	/^  int        QHead;               \/\/ѭ������ͷָ��$/;"	m	struct:__anon7
+QNum	MCX314/X5MCX312/mcx312.h	/^  int        QNum;                \/\/ѭ��������������Ŀ$/;"	m	struct:__anon7
+QTail	MCX314/X5MCX312/mcx312.h	/^  int        QTail;               \/\/ѭ������βָ�� $/;"	m	struct:__anon7
+Q_LENGTH	MCX314/X5MCX312/mcx312.h	88;"	d
+Q_PORT	MCX314/X5MCX312/mcx312.h	90;"	d
+R	MCX314/X5MCX312/mcx312.h	/^  long       R[2];$/;"	m	struct:__anon6
+RANGE	MCX314/X5MCX312/mcx312.h	89;"	d
+REGISTER	MCX314/X5MCX312/mcx312.h	/^}REGISTER;$/;"	t	typeref:struct:__anon8
+RR0H	MCX314/X5MCX312/mcx312.h	63;"	d
+RR0L	MCX314/X5MCX312/mcx312.h	62;"	d
+RR1H	MCX314/X5MCX312/mcx312.h	65;"	d
+RR1L	MCX314/X5MCX312/mcx312.h	64;"	d
+RR2H	MCX314/X5MCX312/mcx312.h	67;"	d
+RR2L	MCX314/X5MCX312/mcx312.h	66;"	d
+RR3H	MCX314/X5MCX312/mcx312.h	69;"	d
+RR3L	MCX314/X5MCX312/mcx312.h	68;"	d
+RR4H	MCX314/X5MCX312/mcx312.h	71;"	d
+RR4L	MCX314/X5MCX312/mcx312.h	70;"	d
+RR5H	MCX314/X5MCX312/mcx312.h	73;"	d
+RR5L	MCX314/X5MCX312/mcx312.h	72;"	d
+RR6H	MCX314/X5MCX312/mcx312.h	75;"	d
+RR6L	MCX314/X5MCX312/mcx312.h	74;"	d
+RR7H	MCX314/X5MCX312/mcx312.h	77;"	d
+RR7L	MCX314/X5MCX312/mcx312.h	76;"	d
+RingQ	MCX314/X5MCX312/mcx312.h	/^  unsigned   RingQ[Q_LENGTH];     \/\/BP�岹���ݶ���$/;"	m	struct:__anon7
+SDLIST	MCX314/X5MCX312/mcx312.h	/^}SDLIST;$/;"	t	typeref:struct:__anon6
+SHIFT_PULSE	MCX314/X5MCX312/mcx312.h	194;"	d
+SV	MCX314/X5MCX312/mcx312.h	/^  unsigned   SV[2];$/;"	m	struct:__anon6
+Shift_Pulse	MCX314/X5MCX312/mcx312.h	/^  unsigned   Shift_Pulse;      \/\/�����л�����$/;"	m	struct:__anon6
+SubCmd	MCX314/X5MCX312/mcx312.h	/^   char   SubCmd;          \/\/������$/;"	m	struct:__anon1
+V	MCX314/X5MCX312/mcx312.h	/^  unsigned   V;           \/\/�ٶ�$/;"	m	struct:__anon2
+V	MCX314/X5MCX312/mcx312.h	/^  unsigned   V;           \/\/�ٶ�$/;"	m	struct:__anon3
+V	MCX314/X5MCX312/mcx312.h	/^  unsigned   V;          \/\/�ٶ�$/;"	m	struct:__anon4
+WR0H	MCX314/X5MCX312/mcx312.h	46;"	d
+WR0L	MCX314/X5MCX312/mcx312.h	45;"	d
+WR1H	MCX314/X5MCX312/mcx312.h	48;"	d
+WR1L	MCX314/X5MCX312/mcx312.h	47;"	d
+WR2H	MCX314/X5MCX312/mcx312.h	50;"	d
+WR2L	MCX314/X5MCX312/mcx312.h	49;"	d
+WR3H	MCX314/X5MCX312/mcx312.h	52;"	d
+WR3L	MCX314/X5MCX312/mcx312.h	51;"	d
+WR4H	MCX314/X5MCX312/mcx312.h	54;"	d
+WR4L	MCX314/X5MCX312/mcx312.h	53;"	d
+WR5H	MCX314/X5MCX312/mcx312.h	56;"	d
+WR5L	MCX314/X5MCX312/mcx312.h	55;"	d
+WR6H	MCX314/X5MCX312/mcx312.h	58;"	d
+WR6L	MCX314/X5MCX312/mcx312.h	57;"	d
+WR7H	MCX314/X5MCX312/mcx312.h	60;"	d
+WR7L	MCX314/X5MCX312/mcx312.h	59;"	d
+WREG1	MCX314/X5MCX312/mcx312.h	/^  unsigned    WREG1[2];$/;"	m	struct:__anon8
+WREG2	MCX314/X5MCX312/mcx312.h	/^  unsigned    WREG2[2];$/;"	m	struct:__anon8
+WREG3	MCX314/X5MCX312/mcx312.h	/^  unsigned    WREG3[2];$/;"	m	struct:__anon8
+WREG4	MCX314/X5MCX312/mcx312.h	/^  unsigned    WREG4;$/;"	m	struct:__anon8
+WREG5	MCX314/X5MCX312/mcx312.h	/^  unsigned    WREG5;$/;"	m	struct:__anon8
+X00	MCX314/X5MCX312/mcx312.h	7;"	d
+X01	MCX314/X5MCX312/mcx312.h	8;"	d
+X02	MCX314/X5MCX312/mcx312.h	9;"	d
+X03	MCX314/X5MCX312/mcx312.h	10;"	d
+X04	MCX314/X5MCX312/mcx312.h	11;"	d
+X05	MCX314/X5MCX312/mcx312.h	12;"	d
+X06	MCX314/X5MCX312/mcx312.h	13;"	d
+X07	MCX314/X5MCX312/mcx312.h	14;"	d
+XALM	MCX314/X5MCX312/mcx312.h	35;"	d
+XEXM	MCX314/X5MCX312/mcx312.h	33;"	d
+XEXP	MCX314/X5MCX312/mcx312.h	32;"	d
+XI0	MCX314/X5MCX312/mcx312.h	24;"	d
+XI1	MCX314/X5MCX312/mcx312.h	25;"	d
+XI2	MCX314/X5MCX312/mcx312.h	26;"	d
+XI3	MCX314/X5MCX312/mcx312.h	27;"	d
+XINP	MCX314/X5MCX312/mcx312.h	34;"	d
+Y00	MCX314/X5MCX312/mcx312.h	15;"	d
+Y01	MCX314/X5MCX312/mcx312.h	16;"	d
+Y02	MCX314/X5MCX312/mcx312.h	17;"	d
+Y03	MCX314/X5MCX312/mcx312.h	18;"	d
+Y04	MCX314/X5MCX312/mcx312.h	19;"	d
+Y05	MCX314/X5MCX312/mcx312.h	20;"	d
+Y06	MCX314/X5MCX312/mcx312.h	21;"	d
+Y07	MCX314/X5MCX312/mcx312.h	22;"	d
+YALM	MCX314/X5MCX312/mcx312.h	39;"	d
+YEXM	MCX314/X5MCX312/mcx312.h	37;"	d
+YEXP	MCX314/X5MCX312/mcx312.h	36;"	d
+YI0	MCX314/X5MCX312/mcx312.h	28;"	d
+YI1	MCX314/X5MCX312/mcx312.h	29;"	d
+YI2	MCX314/X5MCX312/mcx312.h	30;"	d
+YI3	MCX314/X5MCX312/mcx312.h	31;"	d
+YINP	MCX314/X5MCX312/mcx312.h	38;"	d
+adr	MCX314/X5MCX312/mcx312.h	43;"	d
+pData	MCX314/X5MCX312/mcx312.h	/^  unsigned   * pData;             \/\/���ݽ���ָ�룬����ʹ�����жϳ�����$/;"	m	struct:__anon7
+pLimit	MCX314/X5MCX312/mcx312.h	/^  unsigned   * pLimit;            \/\/���ݽ���ָ��ļ�ֵ������ʹ�����жϳ�����      $/;"	m	struct:__anon7
+pList	MCX314/X5MCX312/mcx312.h	/^   void   * pList;         \/\/��������ѡ������ָ��$/;"	m	struct:__anon1
+pQHead	MCX314/X5MCX312/mcx312.h	/^  unsigned   * pQHead;   \/\/ָ��岹���ݶ��е�ָ��$/;"	m	struct:__anon4
+x	MCX314/X5MCX312/mcx312.h	/^  long    x;             \/\/X��λ��$/;"	m	struct:__anon5
+y	MCX314/X5MCX312/mcx312.h	/^  long    y;             \/\/Y��λ��$/;"	m	struct:__anon5
+-format	Makefile	/^	avr-size --format=berkeley $(BUILDDIR)\/main.elf$/;"	m
+AVRDUDE	Makefile	/^AVRDUDE = avrdude $(PROGRAMMER) -p $(DEVICE) -B 10 -F$/;"	m
+BUILDDIR	Makefile	/^BUILDDIR = .$/;"	m
+CLOCK	Makefile	/^CLOCK      = 16000000$/;"	m
+COMPILE	Makefile	/^COMPILE = avr-gcc -Wall -Os -DF_CPU=$(CLOCK) -mmcu=$(DEVICE) -I. -ffunction-sections -fdata-sections$/;"	m
+DEVICE	Makefile	/^DEVICE    	= atmega1280$/;"	m
+FUSES	Makefile	/^FUSES      = -U hfuse:w:0xd2:m -U lfuse:w:0xff:m$/;"	m
+OBJECTS	Makefile	/^OBJECTS = $(addprefix $(BUILDDIR)\/,$(notdir $(SOURCE:.c=.o)))$/;"	m
+PROGRAMMER	Makefile	/^PROGRAMMER = -c avrisp2 -P usb$/;"	m
+SOURCE	Makefile	/^SOURCE    = main.c $/;"	m
+SOURCEDIR	Makefile	/^SOURCEDIR = .$/;"	m
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+A0	main.c	16;"	d	file:
+A1	main.c	15;"	d	file:
+A2	main.c	14;"	d	file:
+ADDR_PORT	main.c	17;"	d	file:
+ADDR_PORT_DDR	main.c	19;"	d	file:
+ADDR_PORT_PIN	main.c	18;"	d	file:
+ADDR_PORT_SET	main.c	20;"	d	file:
+BP1MH	main.c	106;"	d	file:
+BP1ML	main.c	105;"	d	file:
+BP1PH	main.c	104;"	d	file:
+BP1PL	main.c	103;"	d	file:
+BP2MH	main.c	110;"	d	file:
+BP2ML	main.c	109;"	d	file:
+BP2PH	main.c	108;"	d	file:
+BP2PL	main.c	107;"	d	file:
+BP3MH	main.c	114;"	d	file:
+BP3ML	main.c	113;"	d	file:
+BP3PH	main.c	112;"	d	file:
+BP3PL	main.c	111;"	d	file:
+CSN	main.c	34;"	d	file:
+CSN_CLE	main.c	45;"	d	file:
+CSN_DDR	main.c	40;"	d	file:
+CSN_PORT	main.c	37;"	d	file:
+CSN_SET	main.c	44;"	d	file:
+DATA16H_PORT	main.c	22;"	d	file:
+DATA16H_PORT_DDR	main.c	29;"	d	file:
+DATA16H_PORT_PIN	main.c	26;"	d	file:
+DATA16L_PORT	main.c	23;"	d	file:
+DATA16L_PORT_DDR	main.c	30;"	d	file:
+DATA16L_PORT_PIN	main.c	27;"	d	file:
+DATA16_PORT_PIN	main.c	28;"	d	file:
+DATA16_PORT_SET	main.c	24;"	d	file:
+LED	main.c	541;"	d	file:
+LED_CLE	main.c	546;"	d	file:
+LED_DDR	main.c	543;"	d	file:
+LED_PORTB	main.c	542;"	d	file:
+LED_PORT_OUTPUT	main.c	544;"	d	file:
+LED_SET	main.c	545;"	d	file:
+RDN	main.c	36;"	d	file:
+RDN_CLE	main.c	49;"	d	file:
+RDN_DDR	main.c	42;"	d	file:
+RDN_PORT	main.c	39;"	d	file:
+RDN_SET	main.c	48;"	d	file:
+RR0H	main.c	87;"	d	file:
+RR0L	main.c	86;"	d	file:
+RR1H	main.c	89;"	d	file:
+RR1L	main.c	88;"	d	file:
+RR2H	main.c	91;"	d	file:
+RR2L	main.c	90;"	d	file:
+RR3H	main.c	93;"	d	file:
+RR3L	main.c	92;"	d	file:
+RR4H	main.c	95;"	d	file:
+RR4L	main.c	94;"	d	file:
+RR5H	main.c	97;"	d	file:
+RR5L	main.c	96;"	d	file:
+RR6H	main.c	99;"	d	file:
+RR6L	main.c	98;"	d	file:
+RR7H	main.c	101;"	d	file:
+RR7L	main.c	100;"	d	file:
+SET_CSN_WRN_RDN_OUTPUT	main.c	50;"	d	file:
+SET_DATA16_INPUT	main.c	32;"	d	file:
+SET_DATA16_OUTPUT	main.c	31;"	d	file:
+USART_initial_0	main.c	/^void USART_initial_0(void)$/;"	f
+WR0H	main.c	70;"	d	file:
+WR0L	main.c	69;"	d	file:
+WR1H	main.c	72;"	d	file:
+WR1L	main.c	71;"	d	file:
+WR2H	main.c	74;"	d	file:
+WR2L	main.c	73;"	d	file:
+WR3H	main.c	76;"	d	file:
+WR3L	main.c	75;"	d	file:
+WR4H	main.c	78;"	d	file:
+WR4L	main.c	77;"	d	file:
+WR5H	main.c	80;"	d	file:
+WR5L	main.c	79;"	d	file:
+WR6H	main.c	82;"	d	file:
+WR6L	main.c	81;"	d	file:
+WR7H	main.c	84;"	d	file:
+WR7L	main.c	83;"	d	file:
+WRN	main.c	35;"	d	file:
+WRN_CLE	main.c	47;"	d	file:
+WRN_DDR	main.c	41;"	d	file:
+WRN_PORT	main.c	38;"	d	file:
+WRN_SET	main.c	46;"	d	file:
+XRAM_BASH	main.c	63;"	d	file:
+XRAM_SET	main.c	53;"	d	file:
+acac	main.c	/^void acac(unsigned char axis,unsigned int wdata) $/;"	f
+acc	main.c	/^void acc(unsigned char axis,unsigned int wdata) $/;"	f
+accofst	main.c	/^void accofst(unsigned char axis,long wdata) $/;"	f
+adr	main.c	67;"	d	file:
+bp_wait	main.c	/^void bp_wait(void) $/;"	f
+center	main.c	/^void center(unsigned char axis,long wdata) $/;"	f
+command	main.c	/^void command(unsigned char axis,unsigned char cmd) $/;"	f
+compm	main.c	/^void compm(unsigned char axis,long wdata) $/;"	f
+compp	main.c	/^void compp(unsigned char axis,long wdata) $/;"	f
+dcac	main.c	/^void dcac(unsigned char axis,unsigned int wdata) $/;"	f
+dec	main.c	/^void dec(unsigned char axis,unsigned int wdata) $/;"	f
+decp	main.c	/^void decp(unsigned char axis,long wdata) $/;"	f
+ep	main.c	/^void ep(unsigned char axis,long wdata) $/;"	f
+expmode	main.c	/^void expmode(unsigned char axis,unsigned int em6data,unsigned int em7data) $/;"	f
+homesrch	main.c	/^void homesrch(void) $/;"	f
+hsspeed	main.c	/^void hsspeed(unsigned char axis,unsigned int wdata) $/;"	f
+inputw	main.c	/^unsigned char inputw(unsigned char * p)$/;"	f
+lp	main.c	/^void lp(unsigned char axis,long wdata) $/;"	f
+main	main.c	/^int main(void)$/;"	f
+mystdout	main.c	/^static FILE mystdout = FDEV_SETUP_STREAM(uart_putchar, NULL, _FDEV_SETUP_WRITE);$/;"	v	file:
+next_wait	main.c	/^void next_wait(void) $/;"	f
+outpw	main.c	/^void outpw(unsigned char *p,unsigned char ucData)$/;"	f
+pulse	main.c	/^void pulse(unsigned char axis,long wdata) $/;"	f
+range	main.c	/^void range(unsigned char axis,long wdata) $/;"	f
+readep	main.c	/^long readep(unsigned char axis) $/;"	f
+readlp	main.c	/^long readlp(unsigned char axis) $/;"	f
+speed	main.c	/^void speed(unsigned char axis,unsigned int wdata) $/;"	f
+startv	main.c	/^void startv(unsigned char axis,unsigned int wdata) $/;"	f
+syncmode	main.c	/^void syncmode(unsigned char axis,unsigned int sm6data,unsigned int sm7data) $/;"	f
+uart_putchar	main.c	/^static int uart_putchar(char c, FILE *stream)$/;"	f	file:
+wait	main.c	/^void wait(unsigned char axis) $/;"	f
+wreg1	main.c	/^void wreg1(unsigned char axis,unsigned int wdata) $/;"	f
+wreg2	main.c	/^void wreg2(unsigned char axis,unsigned int wdata) $/;"	f
+wreg3	main.c	/^void wreg3(unsigned char axis,unsigned int wdata) $/;"	f
+wreg4	main.c	/^void wreg4(long wdata)$/;"	f
+wreg5	main.c	/^void wreg5(long wdata)$/;"	f
