@@ -2,15 +2,6 @@
 #ifndef __MODBUS_H__
 #define __MODBUS_H__
 
-#include <avr/pgmspace.h>
-#include <string.h>
-#include "Pin_IO.h"
-#include "Time_Init.h"
-#include "uart.h"
-#include <util/delay.h>
-#include "Uart_fifo.h"
-
-//#include "AVR429Lib.h"
 #define byte8_0(var)     *((unsigned char *)&var)
 #define byte8_1(var)     *((unsigned char *)&var + 1)
 #define byte8_2(var)     *((unsigned char *)&var + 2)
@@ -182,6 +173,7 @@ unsigned int My_Reg[20];
 #define JiXieShou_Butten_EN_Clear(B)       {My_Bit.Bit37 = B;}
 
 void Modbus_Int();
+void Uart_send_start(unsigned char * date, unsigned char length);
 void Modbus_Processing(void);
 /**************16位CRC校验函数,查表法********************/
 uint CRC16(uchar *Pushdata,uchar length);
@@ -325,5 +317,6 @@ typedef struct BitBuf{
                     }BitBuf;
 volatile  BitBuf My_Bit;
 
-extern float AxisNum[];
+extern unsigned int AxisNum[];
+extern unsigned char TheBigNum;
 #endif

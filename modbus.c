@@ -1,5 +1,4 @@
-#include "modbus.h"
-
+#include "global.h"
 /**************** CRC ¸ßÎ»×Ö½ÚÖµ±í CRC high byte ******************/
 const unsigned char  PROGMEM auchCRCHi[] =
 {
@@ -98,15 +97,14 @@ unsigned int CRC16(unsigned char *Pushdata,unsigned char length)
 
 void Uart_send_start(unsigned char * date, unsigned char length)
 {
-    USART0_Send_word(*date);
     UartMRB.buff_data_num = length;
+    UART0_INT_EMP_Start;
 }
 
 void Modbus_Int()
 {
     USART0_initial();
     Time0_init();
-    UART0_INT_RX_Start;
 }
 
 void Modbus_Processing(void) 
@@ -116,9 +114,9 @@ void Modbus_Processing(void)
     unsigned int byte_count = 0, Start_Adrr = 0, bit_count = 0, Value_Y = 0;
     unsigned int i = 0;
 
-    unsigned char (*pFunction)(unsigned char i);
+    unsigned char (*pFunction)(unsigned char i) = NULL;
 
-    if((TimerT3_5 == 1))
+    if(TimerT3_5)
     { 
         if(UartMRB.pUartModbusBuffer[0] == MACHINNUM)
         switch(UartMRB.pUartModbusBuffer[1])
@@ -263,7 +261,7 @@ void Modbus_Processing(void)
             default:
                 break;
         }
-        UART0_INT_RX_Start;
+        //UART0_INT_RX_Start;
         TimerT3_5 = 0;
     }
 }
@@ -681,14 +679,22 @@ void Write_XYZWRV_My_Reg(unsigned char Adrr_Data,unsigned int Value_Axis)
 
 }
 
-float AxisNum[3] = {'X','Y','Z'};
+unsigned int AxisNum[9] = {'X','Y','Z','A','B','C','W','R','V'};
 #define XAXISNUM    (AxisNum[0])
 #define YAXISNUM    (AxisNum[1])
 #define ZAXISNUM    (AxisNum[2])
+#define AAXISNUM    (AxisNum[3])
+#define BAXISNUM    (AxisNum[4])
+#define CAXISNUM    (AxisNum[5])
+#define WAXISNUM    (AxisNum[6])
+#define RAXISNUM    (AxisNum[7])
+#define VAXISNUM    (AxisNum[8])
 unsigned char count,count2;
+unsigned char TheBigNum = 0;
 unsigned int Read_XYZWRV_My_Reg(unsigned char Start_Adrr)
 {
     unsigned int temp,HangJu = 0;
+
     switch(Start_Adrr)
     {
         //²ÎÊýÉèÖÃ
@@ -770,18 +776,22 @@ unsigned int Read_XYZWRV_My_Reg(unsigned char Start_Adrr)
         case 49: temp   = Global_Data.WuHua_YanShi/10;              break;
 
 
-        case 58: temp   = QueueGetDataCount(&Uart1QCMDr); break;
-        case 59: temp   = QueueGetDataCount(&Uart1QCMDs); break;
-        case 60: temp   = QueueGetDataCount(&Uart2QCMDr); break;
-        case 61: temp   = QueueGetDataCount(&Uart2QCMDs); break;
-        case 62:  /*GetActualPosition(MOTOR_A, &A_Actual_Point); temp = (A_Actual_Point)/A_Bili;*/break;
-        case 63:  /*GetActualPosition(MOTOR_B, &B_Actual_Point); temp = (B_Actual_Point)/B_Bili;*/break;
-        case 64:  /*GetActualPosition(MOTOR_C, &C_Actual_Point); temp = (C_Actual_Point)/C_Bili;*/break;
-        case 65:  /*GetActualPosition(MOTOR_D, &D_Actual_Point); temp = (D_Actual_Point)/D_Bili;*/break;
+        case 58: temp   = TheBigNum;break;
+        case 59: temp   = XAXISNUM; break;
+        case 60: temp   = YAXISNUM; break;
+        case 61: temp   = ZAXISNUM; break;
+        case 62: temp   = AAXISNUM;/*GetActualPosition(MOTOR_A, &A_Actual_Point); temp = (A_Actual_Point)/A_Bili;*/break;
+        case 63: temp   = BAXISNUM;/*GetActualPosition(MOTOR_B, &B_Actual_Point); temp = (B_Actual_Point)/B_Bili;*/break;
+        case 64: temp   = CAXISNUM;/*GetActualPosition(MOTOR_C, &C_Actual_Point); temp = (C_Actual_Point)/C_Bili;*/break;
+        //case 65:  /*GetActualPosition(MOTOR_D, &D_Actual_Point); temp = (D_Actual_Point)/D_Bili;*/break;
+        case 65: temp   = WAXISNUM; break;
+        case 66: temp   = RAXISNUM; break;
+        case 67: temp   = VAXISNUM; break;
 
-        case 66:  temp   = My_Reg[0];   break;
-        case 67:  temp   = My_Reg[1];   break;
-        case 68:  temp   = My_Reg[2];   break;
+
+        //case 66:  temp   = My_Reg[0];   break;
+        //case 67:  temp   = My_Reg[1];   break;
+        //case 68:  temp   = My_Reg[2];   break;
         case 69:  temp   = My_Reg[3];   break;
         case 70:  temp   = My_Reg[4];   break;
         case 71:  temp   = My_Reg[5];   break;

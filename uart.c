@@ -1,9 +1,9 @@
-#include "uart.h"
+#include "global.h"
 
 UartMRBUFF UartMRB = {UartModbusBuff,0};
 /*************´®¿Ú³õÊ¼»¯*****************/
 
-#ifdef      UART_0
+#ifdef      MODBUS
     void USART0_initial(void)
     {
         //unsigned int a;
@@ -14,9 +14,10 @@ UartMRBUFF UartMRB = {UartModbusBuff,0};
         UCSR0A |= (1<<U2X0);
         UCSR0B |= (1<<RXEN0)|(1<<TXEN0);        //½ÓÊÕÆ÷Óë·¢ËÍÆ÷Ê¹ÄÜ£»
         UCSR0C |= (1<<USBS0)|(1<<UCSZ00)|(1<<UCSZ01);        //ÉèÖÃÖ¡¸ñÊ½: 8 ¸öÊý¾ÝÎ», 1 ¸öÍ£Ö¹Î»£»
-        UCSR0B |= (1<<RXCIE0)|(1<<TXCIE0)/*|(1<<UDRIE0)*/;        //USART½ÓÊÕÖÐ¶ÏÊ¹ÄÜ
-        UART0_INT_RX_Stop;
-        UART0_INT_TX_Start;
+        /*UCSR0B |= (1<<RXCIE0)|(1<<TXCIE0)|(1<<UDRIE0)*/;        //USART½ÓÊÕÖÐ¶ÏÊ¹ÄÜ
+        UART0_INT_RX_Start;
+        UART0_INT_TX_Stop;
+        UART0_INT_EMP_Stop;
     }
 
     /************´®¿Ú·¢ËÍÒ»¸öÊý¾Ý********************/
@@ -42,39 +43,44 @@ UartMRBUFF UartMRB = {UartModbusBuff,0};
             UartMRB.pUartModbusBuffer[UartMRB.buff_data_num++] = UDR0;
     }
 
+/*
     ISR(USART0_TX_vect)
     {            
-        static unsigned char count = 1;
+        static unsigned char sendcount = 1;
 
-        if(count < UartMRB.buff_data_num) 
-            UDR0 = UartMRB.pUartModbusBuffer[count++];
+        if(sendcount < UartMRB.buff_data_num) 
+            UDR0 = UartMRB.pUartModbusBuffer[sendcount++];
         else
         {
-            count = 1;
+            sendcount = 1;
             UART0_INT_RX_Start;
             UartMRB.buff_data_num = 0;
         }
     }
-
-  /*
+*/
     ISR(USART0_UDRE_vect)
     {
-        
-        if(QueueGetDataCount(&Uart1QCMDr))
-            UDR0 = QueueOutput(&Uart1QCMDr);
+        static unsigned char sendcount = 0;
+
+        if(sendcount < UartMRB.buff_data_num) 
+            UDR0 = UartMRB.pUartModbusBuffer[sendcount++];
         else
+        {
             UART0_INT_EMP_Stop;
-        
-    }*/
+            UartMRB.buff_data_num = 0;
+            sendcount = 0;
+        }      
+    }
 #endif
 
-#ifdef      UART_1
+#ifdef      GRBL1
     void USART1_initial(void)
     {
         //unsigned int a;
         //a=16000000/16/115200;//a=fosc/16/baud-1;
         //UBRR0L=a%256;
         //UBRR0H=a/256;
+
         UBRR1 = 16;
         UCSR1A |= (1<<U2X1);
         UCSR1B |= (1<<RXEN1)|(1<<TXEN1);        //½ÓÊÕÆ÷Óë·¢ËÍÆ÷Ê¹ÄÜ£»
@@ -85,6 +91,7 @@ UartMRBUFF UartMRB = {UartModbusBuff,0};
         UART1_INT_TX_Stop;
         QueueCreate(&Uart1QCMDs, Uart1QBuffs, Uart1BuffNums);
         QueueCreate(&Uart1QCMDr, Uart1QBuffr, Uart1BuffNumr);
+        QueueCreate(&Uart1QCMDRTs, Uart1QBuffRunTimes, Uart1RunTimes);
     }
 
     /************´®¿Ú·¢ËÍÒ»¸öÊý¾Ý********************/
@@ -93,11 +100,17 @@ UartMRBUFF UartMRB = {UartModbusBuff,0};
         while (!(UCSR1A & (1 << UDRE1)));        //µÈ´ý·¢ËÍ»º³åÆ÷Îª¿Õ£»
         UDR1 = data;        //½«Êý¾Ý·ÅÈë»º³åÆ÷£¬·¢ËÍÊý¾Ý£»
     }
-    unsigned char  USART1_Send_word_no_wait(unsigned char data)
+
+    unsigned char  USART1_Send_word_nowait_IntStart()
     {
         if(!(UCSR1A & (1 << UDRE1)))
-            return 1; 
-        UDR1 = data;  
+            return 1;
+        if(!QueueGetDataCount(&Uart1QCMDs))
+            return 2; 
+        cli();
+        UDR1 = QueueOutput_Int(&Uart1QCMDs);        //½«Êý¾Ý·ÅÈë»º³åÆ÷£¬·¢ËÍÊý¾Ý£»
+        UART1_INT_TX_Start;
+        sei();
         return 0;      
     }
 
@@ -112,18 +125,7 @@ UartMRBUFF UartMRB = {UartModbusBuff,0};
 
     ISR(USART1_RX_vect)
     {           
-        if(UCSR1A & (1<<DOR1))
-        {
-            while(1)
-            {                   
-                LED_Run(~LED_STATE);
-                _delay_ms(1000);
-                LED_Run(~LED_STATE);
-                _delay_ms(1000);
-            }
-        }
-        else
-        QueueInput(&Uart1QCMDr,UDR1);
+        QueueInput_Int(&Uart1QCMDr,UDR1);
     }
 
 
@@ -132,26 +134,25 @@ UartMRBUFF UartMRB = {UartModbusBuff,0};
         unsigned char temp;
         if(QueueGetDataCount(&Uart1QCMDs))
         {
-            temp = QueueOutput(&Uart1QCMDs);
-            UDR1 = temp;
-            if(temp == '\n')
+            temp = QueueOutput_Int(&Uart1QCMDs);
+            if(temp == '\0')
                 UART1_INT_TX_Stop; 
-            //buffcount++;
+            else
+                UDR1 = temp;
         }
-        else
-            UART1_INT_TX_Stop;
-        //UART1_INT_EMP_Start;
     }
     
-unsigned char SnedRunTimeCMD1;
     ISR(USART1_UDRE_vect)
     {
-        UDR1 = SnedRunTimeCMD1;
-        UART1_INT_EMP_Stop;
+        if(QueueGetDataCount(&Uart1QCMDRTs))
+        {    
+            UDR1 = QueueOutput_Int(&Uart1QCMDRTs);
+            UART1_INT_EMP_Stop;
+        }
     }
 #endif
 
-#ifdef      UART_2
+#ifdef      GRBL2
     void USART2_initial(void)
     {
         //unsigned int a;
@@ -168,6 +169,7 @@ unsigned char SnedRunTimeCMD1;
         UART2_INT_TX_Stop;
         QueueCreate(&Uart2QCMDs, Uart2QBuffs, Uart2BuffNums);
         QueueCreate(&Uart2QCMDr, Uart2QBuffr, Uart2BuffNumr);
+        QueueCreate(&Uart2QCMDRTs, Uart2QBuffRunTimes, Uart2RunTimes);
     }
 
     /************´®¿Ú·¢ËÍÒ»¸öÊý¾Ý********************/
@@ -177,11 +179,16 @@ unsigned char SnedRunTimeCMD1;
         UDR2 = data;        //½«Êý¾Ý·ÅÈë»º³åÆ÷£¬·¢ËÍÊý¾Ý£»
     }
 
-    unsigned char  USART2_Send_word_no_wait(unsigned char data)
+    unsigned char  USART2_Send_word_nowait_IntStart()
     {
         if(!(UCSR2A & (1 << UDRE2)))
             return 1; 
-        UDR2 = data;  
+        if(!QueueGetDataCount(&Uart2QCMDs))
+            return 2; 
+        cli();
+        UDR2 = QueueOutput_Int(&Uart2QCMDs); 
+        UART2_INT_TX_Start; 
+        sei();
         return 0;      
     }
 
@@ -196,20 +203,7 @@ unsigned char SnedRunTimeCMD1;
 
     ISR(USART2_RX_vect)
     {
-        if(UCSR2A & (1<<DOR2))
-        {
-            while(1)
-            {                   
-                LED_Run(~LED_STATE);
-                _delay_ms(100);
-
-                LED_Run(~LED_STATE);
-                _delay_ms(100);
-            }
-        }
-        else
-            QueueInput(&Uart2QCMDr,UDR2);
-        //UDR0 = temp;
+        QueueInput_Int(&Uart2QCMDr,UDR2);
     }
 
 
@@ -218,38 +212,100 @@ unsigned char SnedRunTimeCMD1;
         unsigned char temp;
         if(QueueGetDataCount(&Uart2QCMDs))
         {
-            temp = QueueOutput(&Uart2QCMDs);
-            UDR2 = temp;
-            //UDR0 = temp;
-            if(temp == '\n')
+            temp = QueueOutput_Int(&Uart2QCMDs);
+            if(temp == '\0')
                 UART2_INT_TX_Stop; 
-            //buffcount++;
+            else
+                UDR2 = temp;
+
         }
-        else
-            UART2_INT_TX_Stop;
-        //UART2_INT_EMP_Start;
     }
     
-unsigned char SnedRunTimeCMD2;
     ISR(USART2_UDRE_vect)
     {
-        UDR2 = SnedRunTimeCMD2;
-        UART2_INT_EMP_Stop;
+        if(QueueGetDataCount(&Uart2QCMDRTs))
+        {    
+            UDR2 = QueueOutput_Int(&Uart2QCMDRTs);
+            UART2_INT_EMP_Stop;
+        }
     }
 #endif
 
-/********´®¿Ú½ÓÊÕ***********/
-/*
-unsigned int USART_Receive( void )
-{
-    unsigned int i = 0x15FF;
-// µÈ´ý½ÓÊÕÊý¾Ý
-    do
+#ifdef      GRBL3
+    void USART3_initial(void)
     {
-      if(!(i--)) return 300;
-    }while (!(UCSR0A & (1<<RXC0)));
-// ´Ó»º³åÆ÷ÖÐ»ñÈ¡²¢·µ»ØÊý¾Ý
-    return UDR0;
-}
+        //unsigned int a;
+        //a=16000000/16/115200;//a=fosc/16/baud-1;
+        //UBRR0L=a%256;
+        //UBRR0H=a/256;
+        UBRR3 = 16;
+        UCSR3A |= (1<<U2X3);
+        UCSR3B |= (1<<RXEN3)|(1<<TXEN3);        //½ÓÊÕÆ÷Óë·¢ËÍÆ÷Ê¹ÄÜ£»
+        UCSR3C |= (1<<USBS3)|(1<<UCSZ30)|(1<<UCSZ31);        //ÉèÖÃÖ¡¸ñÊ½: 8 ¸öÊý¾ÝÎ», 1 ¸öÍ£Ö¹Î»£»
+        UCSR3B |= (1<<RXCIE3)|(1<<TXCIE3);        //USART½ÓÊÕÖÐ¶ÏÊ¹ÄÜ
+        UART3_INT_EMP_Stop;
+        UART3_INT_RX_Start;
+        UART3_INT_TX_Stop;
+        QueueCreate(&Uart3QCMDs, Uart3QBuffs, Uart3BuffNums);
+        QueueCreate(&Uart3QCMDr, Uart3QBuffr, Uart3BuffNumr);
+        QueueCreate(&Uart3QCMDRTs, Uart3QBuffRunTimes, Uart3RunTimes);
+    }
 
-*/
+    /************´®¿Ú·¢ËÍÒ»¸öÊý¾Ý********************/
+    void USART3_Send_word(unsigned char data)
+    {
+        while (!(UCSR3A & (1 << UDRE3)));        //µÈ´ý·¢ËÍ»º³åÆ÷Îª¿Õ£»
+        UDR3 = data;        //½«Êý¾Ý·ÅÈë»º³åÆ÷£¬·¢ËÍÊý¾Ý£»
+    }
+
+    unsigned char  USART3_Send_word_nowait_IntStart()
+    {
+        if(!(UCSR3A & (1 << UDRE3)))
+            return 1; 
+        if(!QueueGetDataCount(&Uart3QCMDs))
+            return 2; 
+        cli();
+        UDR3 = QueueOutput_Int(&Uart3QCMDs); 
+        UART3_INT_TX_Start; 
+        sei();
+        return 0;      
+    }
+
+    void USART3_Send_string(unsigned char * data)
+    {
+        unsigned char i;
+        for(i = 0; *(data+i) != '\0'; i++)
+        {
+            USART3_Send_word(*(data+i));
+        }
+    }
+
+    ISR(USART3_RX_vect)
+    {
+        QueueInput_Int(&Uart3QCMDr,UDR3);
+    }
+
+
+    ISR(USART3_TX_vect)
+    {
+        unsigned char temp;
+        if(QueueGetDataCount(&Uart3QCMDs))
+        {
+            temp = QueueOutput_Int(&Uart3QCMDs);
+            if(temp == '\0')
+                UART3_INT_TX_Stop; 
+            else
+                UDR3 = temp;
+        }
+    }
+    
+    ISR(USART3_UDRE_vect)
+    {
+        if(QueueGetDataCount(&Uart3QCMDRTs))
+        {    
+            UDR3 = QueueOutput_Int(&Uart3QCMDRTs);
+            UART3_INT_EMP_Stop;
+        }
+    }
+#endif
+

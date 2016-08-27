@@ -1,5 +1,5 @@
-#include "Time_Init.h"
-
+//#include "Time_Init.h"
+#include "global.h"
 /*--------------------Time0--------------------------------*/
 volatile unsigned char TimerT3_5 = 0;
 
@@ -14,7 +14,7 @@ void Time0_init()
 
 ISR(TIMER0_COMPA_vect)
 {   
-    UART0_INT_RX_Stop;
+    //UART0_INT_RX_Stop;
     Time0_Stop;
     TimerT3_5 = 1;  
     UartMRB.buff_data_num = 0;  
@@ -28,7 +28,7 @@ void Time1_init()
     OCR1A = 7812/3;//0.000064*7812.5 = 0.5s
     TCNT1 = 0;
     TIMSK1 |= (1<<OCIE1A);
-    Time1_Stop;
+    Time1_Start;
 }
 
 char SendCmdStateFlag = 0;

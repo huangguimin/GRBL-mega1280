@@ -1,11 +1,23 @@
-modbus.o: modbus.c modbus.h Pin_IO.h Time_Init.h uart.h Uart_fifo.h
+modbus.o: modbus.c global.h uart.h modbus.h Time_Init.h Uart_fifo.h \
+ Pin_IO.h ProcessingAcii.h UartSend_To_GRBL.h PutData_To_Queue.h \
+ exter_int.h
 
-modbus.h:
-
-Pin_IO.h:
-
-Time_Init.h:
+global.h:
 
 uart.h:
 
+modbus.h:
+
+Time_Init.h:
+
 Uart_fifo.h:
+
+Pin_IO.h:
+
+ProcessingAcii.h:
+
+UartSend_To_GRBL.h:
+
+PutData_To_Queue.h:
+
+exter_int.h:
